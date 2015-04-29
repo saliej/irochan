@@ -25,4 +25,4 @@ This was not meant to demonstrate idiomatic Nim or WinApi programming, although 
 nim --app:gui -d:release c irochan.nim
 
 ###### Where is the irochan.res file?
-You will need to create one on your machine using (WindRes)[http://www.mingw.org/].  Its usage details are beyond the scope of this readme.
+You will need to create one on your machine using [WindRes](http://www.mingw.org/).  Its usage details are beyond the scope of this readme.
