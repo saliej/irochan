@@ -7,7 +7,10 @@ A [Nim](http://nim-lang.org/) clone of the popular colour picker [Pixie](http://
 I wanted to learn Nim, and to see how easy/hard it was to create a WinApi app.  At the time it was written, there were no tutorials from writing Windows GUI Applications.
 
 ###### And?  How easy/hard was it?
-Super easy if you're already used to creating Windows programs, and are familiar with C-style languages.
+Super easy if you're already familiar with WinApi programming and C-style languages.
+
+###### How long did it take you?
+About two hours a night over maybe 5 days.  Most of the time was spent researching the language, tools, and looking up WinApi functions.  Nim itself is very easy to use and understand, at least the subset of the language that was used to create this app.
 
 ###### Why should I use this?
 You probably shouldn't :)
