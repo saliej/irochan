@@ -21,8 +21,8 @@ You probably shouldn't :)
 ###### Why isn't X/Y/Z implemented?  Why does X/Y/Z work differently?
 I basically only implemented the features I use.  I'll add more features when I have time or the need arises.  I probably will not be supporting conversion CMYK values.
 
-###### Why didn't you do X using Y Nim/WinApi construct?
-This was not meant to demonstrate idiomatic Nim or WinApi programming, although I will be updating the code over time as I become more familiar with the language and best practices.
+###### Why does the code suck so much?
+This was not meant to demonstrate idiomatic Nim or WinApi programming, although I will be updating the code over time as I become more familiar with the language and best practices.  I'm not really happy with it right now but I'd rather have it in github than in some random folder on my drive.
 
 ###### How do I build it?
 nim --app:gui -d:release c irochan.nim
