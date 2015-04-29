@@ -25,7 +25,7 @@ I basically only implemented the features I use.  I'll add more features when I 
 This was not meant to demonstrate idiomatic Nim or WinApi programming, although I will be updating the code over time as I become more familiar with the language and best practices.  I'm not really happy with it right now but I'd rather have it in github than in some random folder on my drive.
 
 ###### How do I build it?
-nim --app:gui -d:release c irochan.nim
+    nim --app:gui -d:release c irochan.nim
 
 ###### Where is the irochan.res file?
 You will need to create one on your machine using [WindRes](http://www.mingw.org/).  Its usage details are beyond the scope of this readme.
