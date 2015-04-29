@@ -9,11 +9,20 @@ I wanted to learn Nim, and to see how easy/hard it was to create a WinApi app.  
 ###### And?  How easy/hard was it?
 Super easy if you're already used to creating Windows programs, and are familiar with C-style languages.
 
+###### Why should I use this?
+You probably shouldn't :)
+
 ###### What does irochan mean?
 "Colour child" in Japanese
 
-###### Why isn't X/Y/Z implemented?
+###### Why isn't X/Y/Z implemented?  Why does X/Y/Z work differently?
 I basically only implemented the features I use.  I'll add more features when I have time or the need arises.  I probably will not be supporting conversion CMYK values.
 
 ###### Why didn't you do X using Y Nim/WinApi construct?
 This was not meant to demonstrate idiomatic Nim or WinApi programming, although I will be updating the code over time as I become more familiar with the language and best practices.
+
+###### How do I build it?
+nim --app:gui -d:release c irochan.nim
+
+###### Where is the irochan.res file?
+You will need to create one on your machine using (WindRes)[http://www.mingw.org/].  Its usage details are beyond the scope of this readme.
