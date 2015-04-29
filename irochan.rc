@@ -1,0 +1,25 @@
+id ICON "irochan.ico"
+
+1 VERSIONINFO
+FILEVERSION     0,0,0,1
+PRODUCTVERSION  0,0,0,1
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "080904E4"
+    BEGIN
+      VALUE "FileDescription", "irochan"
+      VALUE "FileVersion", "0.0.0.1"
+      VALUE "InternalName", "irochan"
+      VALUE "LegalCopyright", "saliej"
+      VALUE "OriginalFilename", "irochan.exe"
+      VALUE "ProductName", "irochan"
+      VALUE "ProductVersion", "0.0.0.1"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x809, 1252
+  END
+END
