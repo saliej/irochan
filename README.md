@@ -4,7 +4,7 @@ A [Nim](http://nim-lang.org/) clone of the popular colour picker [Pixie](http://
 ### FAQ
 
 ###### Why?
-I wanted to learn Nim, and to see how easy/hard it was to create a WinApi app.  At the time it was written, there were no tutorials from writing Windows GUI Applications.
+I wanted to learn Nim, and to see how easy/hard it was to create a WinApi app.  At the time it was written, there were no tutorials for  writing Windows GUI Applications using Nim.
 
 ###### And?  How easy/hard was it?
 Super easy if you're already familiar with WinApi programming and C-style languages.
