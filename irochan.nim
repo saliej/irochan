@@ -1,7 +1,7 @@
 {.link: "./irochan.res".}
 
 import
-  strutils, math, windows#, shellapi, nb30, mmsystem, shfolder
+  strutils, math, windows
 
 const WM_NCMOUSELEAVE = 0x02A2;
 const BUTTONCLASSNAME : LPCSTR = "BUTTON";
@@ -10,8 +10,12 @@ const ID_BTN_EXIT : HMENU = 100;
 const ID_TXT_TEXT : HMENU = 101;
 const TID_POLLMOUSE : WINUINT = 100;
 const MOUSE_POLL_DELAY : WINUINT = 100;
+const WINDOWNAME : LPCSTR = "irochan";
 
-var hInstance = GetModuleHandle(nil);
+const APP_WIDTH = 160
+const APP_HEIGHT = 82
+
+let hInstance = GetModuleHandle(nil);
 
 var hWndMain : HWND = 0;
 var hwndCloseButton : HWND = 0;
@@ -20,8 +24,9 @@ var hButtonBrush : HBRUSH = 0;
 var hMouseHook : HHOOK = 0;
 var hdcScreen : HDC = 0;
 var hFont : HFONT = 0;
-var colourRect = RECT(TopLeft : POINT(x : 6, y : 7), BottomRight : POINT(x : 37, y : 37));
 var isTimerAlive : bool = false;
+var colourRect = RECT(TopLeft : POINT(x : 6, y : 7), BottomRight : POINT(x : 37, y : 37));
+
 
 proc RgbToHsv(red : int, green: int, blue: int) : auto =
     let r : float = float(red) / 255.0;
@@ -239,7 +244,6 @@ proc WndProc(hWnd: HWND; msg: WINUINT; wParam: WPARAM; lParam: LPARAM) : LRESULT
     else:
         discard;
 
-
     return DefWindowProc(hWnd, msg, wParam, lParam);
 
 var wndClass : WNDCLASS;
@@ -256,24 +260,19 @@ windowStyles = windowStyles and not (WS_DLGFRAME or WS_THICKFRAME or WS_MINIMIZE
 
 discard RegisterClassA(addr wndClass);
 
-const WINDOWNAME : LPCSTR = "irochan";
-
-const windowWidth = 160
-const windowHeight = 82
-
 let centerX = GetSystemMetrics(SM_CXSCREEN) div 2
 let centerY = GetSystemMetrics(SM_CYSCREEN) div 2
 
 hWndMain = CreateWindowEx(
-        WS_EX_TOPMOST,             # Optional window styles.
+        WS_EX_TOPMOST,              # Optional window styles.
         CLASS_NAME,                 # Window class
         WINDOWNAME,                 # Window text
         windowStyles,               # Window style
 
         # Size and position
-        centerX - (windowWidth div 2), 
-        centerY - (windowHeight div 2)
-        , windowWidth, windowHeight,
+        centerX - (APP_WIDTH div 2), 
+        centerY - (APP_HEIGHT div 2)
+        , APP_WIDTH, APP_HEIGHT,
 
         cast[HWND](nil),        # Parent window    
         cast[HMENU](nil),       # Menu
