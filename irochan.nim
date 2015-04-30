@@ -3,7 +3,6 @@
 import
   strutils, math, windows
 
-const WM_NCMOUSELEAVE = 0x02A2;
 const BUTTONCLASSNAME : LPCSTR = "BUTTON";
 const STATICCLASSNAME : LPCSTR = "STATIC";
 const ID_BTN_EXIT : HMENU = 100;
@@ -35,8 +34,8 @@ proc RgbToHsv(red : int, green: int, blue: int) : auto =
 
 
     let rgb = [r, g, b];
-    var max : float = max rgb;
-    var min : float = min rgb;
+    let max : float = max rgb;
+    let min : float = min rgb;
 
     var h, s, v : float;
    
@@ -119,25 +118,11 @@ proc UpdateColour () =
 
     discard SendMessage(hwndText, WM_SETTEXT, 0, cast[LPARAM](cString));
 
-proc MouseProc(nCode: int32; wParam: WPARAM; lParam: LPARAM) : LRESULT {.stdcall procvar.} = 
-    if nCode == HC_ACTION:
-        case wParam:
-        of WM_MOUSEMOVE, WM_NCMOUSEMOVE:
-            if isTimerAlive :
-                discard KillTimer (hWndMain, TID_POLLMOUSE);
-                isTimerAlive = false;
-
-        else:
-            discard;
-
-    return CallNextHookEx(hMouseHook, nCode, wParam, lParam);
-
 # Main Window Procedure
 proc WndProc(hWnd: HWND; msg: WINUINT; wParam: WPARAM; lParam: LPARAM) : LRESULT {.stdcall procvar.}  = 
 
     case msg:
     of WM_CREATE:
-        # hMouseHook = SetWindowsHookEx(WH_MOUSE, MouseProc, 0, GetCurrentThreadId());
 
         hwndCloseButton = CreateWindow (
                        BUTTONCLASSNAME,          # The class name required is button
